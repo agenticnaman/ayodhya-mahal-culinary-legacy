@@ -25,16 +25,16 @@ export default function Services() {
       title: "Home Delivery",
       description:
         "Enjoy our delicious food in the comfort of your home with our reliable delivery service",
-      color: "text-accent",
-      bgColor: "bg-accent/10",
+      color: "text-primary",
+      bgColor: "bg-primary/10",
     },
     {
       icon: Clock,
       title: "Dinner Service",
       description:
         "Open for dinner service from 11:00 AM to 11:00 PM, seven days a week",
-      color: "text-destructive",
-      bgColor: "bg-destructive/10",
+      color: "text-secondary",
+      bgColor: "bg-secondary/10",
     },
     {
       icon: Leaf,
@@ -62,27 +62,28 @@ export default function Services() {
   };
 
   return (
-    <section id="services" className="section-spacing bg-muted/30 relative overflow-hidden">
-      <div className="container mx-auto container-padding">
-        <div className="max-w-6xl mx-auto">
+    <section id="services" className="section-spacing bg-background relative overflow-hidden">
+      <div className="content-width container-padding">
+        <div className="max-w-7xl mx-auto">
           {/* Section Header */}
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
             viewport={{ once: true }}
-            className="text-center mb-16"
+            className="text-center mb-20"
           >
-            <h2 className="text-3xl lg:text-5xl font-serif font-bold mb-6 hero-text">
+            <h2 className="text-4xl lg:text-6xl font-serif font-bold mb-6 text-primary">
               Our Services & Offerings
             </h2>
-            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+            <div className="w-24 h-1 bg-secondary mx-auto mb-6"></div>
+            <p className="text-xl text-muted-foreground max-w-3xl mx-auto text-constrained leading-relaxed">
               Discover what makes The Ayodhya Mahal the perfect choice for your dining experience
             </p>
           </motion.div>
 
           {/* Services Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 mb-20">
             {services.map((service, index) => {
               const IconComponent = service.icon;
               return (
@@ -92,16 +93,15 @@ export default function Services() {
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.6, delay: index * 0.1 }}
                   viewport={{ once: true }}
-                  whileHover={{ scale: 1.05 }}
-                  className="card-elegant bg-card p-6 rounded-2xl shadow-lg hover:shadow-xl transition-shadow"
+                  className="card-elegant bg-card/60 backdrop-blur-sm p-8 rounded-2xl border border-border/20 hover-lift group"
                 >
-                  <div className={`inline-flex p-4 rounded-full ${service.bgColor} mb-4`}>
-                    <IconComponent className={`h-8 w-8 ${service.color}`} />
+                  <div className={`inline-flex p-5 rounded-2xl ${service.bgColor} mb-6 shadow-md group-hover:shadow-lg transition-all duration-300`}>
+                    <IconComponent className={`h-10 w-10 ${service.color}`} />
                   </div>
-                  <h3 className="text-xl font-serif font-semibold mb-3 text-card-foreground">
+                  <h3 className="text-xl font-serif font-bold mb-4 text-card-foreground">
                     {service.title}
                   </h3>
-                  <p className="text-muted-foreground leading-relaxed">
+                  <p className="text-muted-foreground leading-relaxed text-base">
                     {service.description}
                   </p>
                 </motion.div>
@@ -130,7 +130,7 @@ export default function Services() {
                 <div className="text-sm text-muted-foreground">Days a Week</div>
               </motion.div>
               <motion.div whileHover={{ scale: 1.1 }} className="space-y-2">
-                <div className="text-3xl font-bold text-accent">12</div>
+                <div className="text-3xl font-bold text-primary">12</div>
                 <div className="text-sm text-muted-foreground">Hours Daily</div>
               </motion.div>
             </div>
@@ -139,11 +139,16 @@ export default function Services() {
               our menu provides value and variety. We strive to create a welcoming environment 
               for everyone, with features designed to enhance your dining experience from start to finish.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button variant="royal" size="lg" onClick={scrollToLocation}>
+            <div className="flex flex-col sm:flex-row gap-6 justify-center">
+              <Button
+                className="btn-primary text-lg px-10 py-6 h-auto rounded-xl font-semibold shadow-xl hover:shadow-2xl transition-all duration-300"
+                onClick={scrollToLocation}
+              >
                 Visit Our Restaurant
               </Button>
-              <Button variant="gold" size="lg">
+              <Button
+                className="btn-secondary text-lg px-10 py-6 h-auto rounded-xl font-semibold shadow-xl hover:shadow-2xl transition-all duration-300"
+              >
                 Call for Home Delivery
               </Button>
             </div>

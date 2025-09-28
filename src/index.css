@@ -2,59 +2,59 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Royal Restaurant Design System - Inspired by The Ayodhya Mahal's elegant teal and gold interior */
+/* Premium Vegetarian Restaurant Design System - Emerald, Ivory & Gold Elegance */
 
 @layer base {
   :root {
-    /* Premium Royal Restaurant Theme */
-    --background: 0 0% 100%;
-    --foreground: 240 10% 3.9%;
+    /* Premium Emerald-Ivory-Gold Theme */
+    --background: 40 20% 98%;
+    --foreground: 220 15% 10%;
 
     /* Card colors */
-    --card: 0 0% 100%;
-    --card-foreground: 240 10% 3.9%;
+    --card: 40 20% 98%;
+    --card-foreground: 220 15% 10%;
 
     /* Popover colors */
-    --popover: 0 0% 100%;
-    --popover-foreground: 240 10% 3.9%;
+    --popover: 40 20% 98%;
+    --popover-foreground: 220 15% 10%;
 
-    /* Primary - Deep Royal Navy */
-    --primary: 220 40% 15%;
+    /* Primary - Elegant Emerald */
+    --primary: 160 48% 26%;
     --primary-foreground: 0 0% 98%;
-    --primary-hover: 220 40% 20%;
+    --primary-hover: 160 48% 32%;
 
-    /* Secondary - Rich Gold */
-    --secondary: 35 85% 55%;
-    --secondary-foreground: 240 10% 3.9%;
-    --secondary-hover: 35 85% 60%;
+    /* Secondary - Refined Gold */
+    --secondary: 40 85% 55%;
+    --secondary-foreground: 220 15% 10%;
+    --secondary-hover: 40 85% 60%;
 
-    /* Muted - Soft neutrals */
-    --muted: 240 4.8% 95.9%;
-    --muted-foreground: 240 3.8% 46.1%;
+    /* Muted - Emerald-tinted neutrals */
+    --muted: 150 20% 95%;
+    --muted-foreground: 150 10% 35%;
 
-    /* Accent - Warm Amber */
-    --accent: 25 95% 53%;
-    --accent-foreground: 240 10% 3.9%;
+    /* Accent - Warm Amber highlights */
+    --accent: 28 92% 55%;
+    --accent-foreground: 220 15% 10%;
 
     /* Destructive colors */
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 0 0% 98%;
 
     /* Border and input colors */
-    --border: 240 5.9% 90%;
-    --input: 240 5.9% 90%;
-    --ring: 220 40% 15%;
+    --border: 150 15% 85%;
+    --input: 150 15% 85%;
+    --ring: 160 48% 26%;
 
     /* Premium gradients */
-    --gradient-royal: linear-gradient(135deg, hsl(220, 40%, 15%) 0%, hsl(220, 40%, 25%) 100%);
-    --gradient-gold: linear-gradient(135deg, hsl(35, 85%, 55%) 0%, hsl(35, 85%, 70%) 100%);
-    --gradient-hero: linear-gradient(135deg, hsl(220, 40%, 15%) 0%, hsl(220, 40%, 20%) 50%, hsl(35, 85%, 55%) 100%);
-    --gradient-subtle: linear-gradient(180deg, hsl(0, 0%, 100%) 0%, hsl(240, 4.8%, 95.9%) 100%);
+    --gradient-emerald: linear-gradient(135deg, hsl(160, 48%, 26%) 0%, hsl(160, 48%, 32%) 100%);
+    --gradient-gold: linear-gradient(135deg, hsl(40, 85%, 55%) 0%, hsl(40, 85%, 65%) 100%);
+    --gradient-hero: linear-gradient(135deg, hsl(160, 48%, 26%) 0%, hsl(160, 48%, 18%) 50%, hsl(40, 85%, 55%) 100%);
+    --gradient-subtle: linear-gradient(180deg, hsl(40, 20%, 98%) 0%, hsl(150, 20%, 95%) 100%);
 
     /* Premium shadows */
-    --shadow-primary: 0 10px 30px -10px hsl(220 40% 15% / 0.4);
-    --shadow-gold: 0 8px 25px -8px hsl(35 85% 55% / 0.5);
-    --shadow-elegant: 0 20px 50px -20px hsl(220 40% 15% / 0.25);
+    --shadow-primary: 0 10px 30px -10px hsl(160 48% 26% / 0.4);
+    --shadow-gold: 0 8px 25px -8px hsl(40 85% 55% / 0.5);
+    --shadow-elegant: 0 20px 50px -20px hsl(160 48% 26% / 0.25);
 
     /* Animation and transition */
     --transition-elegant: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
@@ -80,42 +80,42 @@
   }
 
   .dark {
-    /* Dark theme with premium royal colors */
-    --background: 240 10% 3.9%;
+    /* Dark theme with premium emerald colors */
+    --background: 215 15% 9%;
     --foreground: 0 0% 98%;
 
-    --card: 240 10% 3.9%;
+    --card: 215 15% 9%;
     --card-foreground: 0 0% 98%;
 
-    --popover: 240 10% 3.9%;
+    --popover: 215 15% 9%;
     --popover-foreground: 0 0% 98%;
 
-    --primary: 220 40% 25%;
+    --primary: 160 45% 38%;
     --primary-foreground: 0 0% 98%;
-    --primary-hover: 220 40% 30%;
+    --primary-hover: 160 45% 45%;
 
-    --secondary: 35 85% 65%;
-    --secondary-foreground: 240 10% 3.9%;
-    --secondary-hover: 35 85% 70%;
+    --secondary: 40 80% 60%;
+    --secondary-foreground: 215 15% 9%;
+    --secondary-hover: 40 80% 65%;
 
-    --muted: 240 3.7% 15.9%;
-    --muted-foreground: 240 5% 64.9%;
+    --muted: 160 12% 18%;
+    --muted-foreground: 160 8% 64%;
 
-    --accent: 25 95% 63%;
-    --accent-foreground: 240 10% 3.9%;
+    --accent: 28 88% 60%;
+    --accent-foreground: 215 15% 9%;
 
     --destructive: 0 62.8% 30.6%;
     --destructive-foreground: 0 0% 98%;
 
-    --border: 240 3.7% 15.9%;
-    --input: 240 3.7% 15.9%;
-    --ring: 220 40% 25%;
+    --border: 160 12% 18%;
+    --input: 160 12% 18%;
+    --ring: 160 45% 38%;
 
     /* Dark theme gradients */
-    --gradient-royal: linear-gradient(135deg, hsl(220, 40%, 25%) 0%, hsl(220, 40%, 35%) 100%);
-    --gradient-gold: linear-gradient(135deg, hsl(35, 85%, 65%) 0%, hsl(35, 85%, 55%) 100%);
-    --gradient-hero: linear-gradient(135deg, hsl(240, 10%, 3.9%) 0%, hsl(220, 40%, 25%) 50%, hsl(35, 85%, 55%) 100%);
-    --gradient-subtle: linear-gradient(180deg, hsl(240, 10%, 3.9%) 0%, hsl(240, 3.7%, 15.9%) 100%);
+    --gradient-emerald: linear-gradient(135deg, hsl(160, 45%, 38%) 0%, hsl(160, 45%, 45%) 100%);
+    --gradient-gold: linear-gradient(135deg, hsl(40, 80%, 60%) 0%, hsl(40, 80%, 55%) 100%);
+    --gradient-hero: linear-gradient(135deg, hsl(215, 15%, 9%) 0%, hsl(160, 45%, 38%) 50%, hsl(40, 80%, 60%) 100%);
+    --gradient-subtle: linear-gradient(180deg, hsl(215, 15%, 9%) 0%, hsl(160, 12%, 18%) 100%);
     --sidebar-background: 240 5.9% 10%;
     --sidebar-foreground: 240 4.8% 95.9%;
     --sidebar-primary: 224.3 76.3% 48%;
@@ -141,34 +141,36 @@
   }
 
   .hero-text {
-    background: var(--gradient-hero);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-    text-shadow: 0 2px 4px hsl(var(--primary) / 0.3);
-    /* Fallback for better visibility */
     color: hsl(var(--primary));
     font-weight: 800;
+    text-shadow: 0 2px 4px hsl(var(--primary) / 0.2);
+    letter-spacing: -0.025em;
   }
 
-  .btn-royal {
-    background: var(--gradient-royal);
+  .btn-primary {
+    background: hsl(var(--primary));
+    color: hsl(var(--primary-foreground));
     box-shadow: var(--shadow-primary);
     transition: var(--transition-elegant);
+    font-weight: 600;
   }
 
-  .btn-royal:hover {
+  .btn-primary:hover {
+    background: hsl(var(--primary-hover));
     transform: translateY(-2px);
     box-shadow: var(--shadow-elegant);
   }
 
-  .btn-gold {
-    background: var(--gradient-gold);
+  .btn-secondary {
+    background: hsl(var(--secondary));
+    color: hsl(var(--secondary-foreground));
     box-shadow: var(--shadow-gold);
     transition: var(--transition-elegant);
+    font-weight: 600;
   }
 
-  .btn-gold:hover {
+  .btn-secondary:hover {
+    background: hsl(var(--secondary-hover));
     transform: translateY(-2px);
     box-shadow: var(--shadow-elegant);
   }
@@ -185,11 +187,47 @@
 }
 
 @layer components {
+  /* Premium Spacing System - 8pt Grid */
   .container-padding {
-    @apply px-4 sm:px-6 lg:px-8;
+    @apply px-6 sm:px-8 lg:px-12;
   }
 
   .section-spacing {
-    @apply py-16 lg:py-24;
+    @apply py-24 md:py-32;
+  }
+
+  .content-width {
+    @apply max-w-6xl mx-auto;
+  }
+
+  .text-constrained {
+    @apply max-w-[65ch];
+  }
+
+  /* Premium Component Utilities */
+  .gradient-border {
+    @apply relative;
+  }
+  
+  .gradient-border::before {
+    @apply content-[''] absolute inset-0 rounded-xl p-px bg-gradient-to-r from-secondary via-accent to-secondary;
+  }
+  
+  .gradient-border > * {
+    @apply relative bg-background rounded-xl;
+  }
+
+  /* Glass morphism effect */
+  .glass-effect {
+    @apply backdrop-blur-md bg-background/80;
+  }
+
+  /* Elegant hover animations */
+  .hover-lift {
+    @apply transition-all duration-300 ease-out;
+  }
+  
+  .hover-lift:hover {
+    @apply -translate-y-1 shadow-2xl;
   }
 }

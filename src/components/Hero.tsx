@@ -66,7 +66,7 @@ export default function Hero() {
 
           {/* Features */}
           <motion.div
-            className="flex flex-wrap justify-center gap-6 mb-12 text-sm lg:text-base"
+            className="flex flex-wrap justify-center gap-8 mb-12"
             initial="hidden"
             animate="visible"
             variants={{
@@ -77,20 +77,22 @@ export default function Hero() {
             }}
           >
             {[
-              { icon: <Utensils className="h-5 w-5" />, text: "Pure Vegetarian Thali" },
-              { icon: <Star className="h-5 w-5" />, text: "Jain Options Available" },
-              { icon: <Home className="h-5 w-5" />, text: "Home Delivery" },
+              { icon: <Utensils className="h-6 w-6" />, text: "Pure Vegetarian Thali" },
+              { icon: <Star className="h-6 w-6" />, text: "Jain Options Available" },
+              { icon: <Home className="h-6 w-6" />, text: "Home Delivery" },
             ].map((item, i) => (
               <motion.div
                 key={i}
-                className="flex items-center space-x-2 text-primary"
+                className="flex items-center space-x-3 bg-card/50 backdrop-blur-sm px-6 py-3 rounded-full border border-border/30 shadow-md hover:shadow-lg transition-all duration-300 hover:-translate-y-1"
                 variants={{
                   hidden: { opacity: 0, y: 20 },
                   visible: { opacity: 1, y: 0 },
                 }}
               >
-                {item.icon}
-                <span>{item.text}</span>
+                <div className="text-secondary">
+                  {item.icon}
+                </div>
+                <span className="text-foreground font-medium text-base lg:text-lg">{item.text}</span>
               </motion.div>
             ))}
           </motion.div>
@@ -108,15 +110,13 @@ export default function Hero() {
 
           {/* CTA Buttons */}
           <motion.div
-            className="flex flex-col sm:flex-row gap-4 justify-center mb-16"
+            className="flex flex-col sm:flex-row gap-6 justify-center mb-16"
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.7 }}
           >
             <Button
-              variant="royal"
-              size="lg"
-              className="text-lg px-8 py-6 h-auto"
+              className="btn-primary text-lg px-10 py-6 h-auto rounded-xl font-semibold shadow-xl hover:shadow-2xl transition-all duration-300"
               onClick={() =>
                 document.getElementById("location")?.scrollIntoView({ behavior: "smooth" })
               }
@@ -124,9 +124,7 @@ export default function Hero() {
               Visit Our Restaurant
             </Button>
             <Button
-              variant="gold"
-              size="lg"
-              className="text-lg px-8 py-6 h-auto"
+              className="btn-secondary text-lg px-10 py-6 h-auto rounded-xl font-semibold shadow-xl hover:shadow-2xl transition-all duration-300"
               onClick={() =>
                 document.getElementById("services")?.scrollIntoView({ behavior: "smooth" })
               }

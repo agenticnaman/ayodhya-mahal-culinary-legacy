@@ -33,28 +33,29 @@ export default function Gallery() {
   ];
 
   return (
-    <section id="gallery" className="section-spacing relative overflow-hidden">
-      <div className="container mx-auto container-padding">
-        <div className="max-w-6xl mx-auto">
+    <section id="gallery" className="section-spacing bg-muted/30 relative overflow-hidden">
+      <div className="content-width container-padding">
+        <div className="max-w-7xl mx-auto">
           {/* Section Header */}
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
             viewport={{ once: true }}
-            className="text-center mb-16"
+            className="text-center mb-20"
           >
-            <h2 className="text-3xl lg:text-5xl font-serif font-bold mb-6 hero-text">
+            <h2 className="text-4xl lg:text-6xl font-serif font-bold mb-6 text-primary">
               Our Royal Interior
             </h2>
-            <p className="text-lg text-muted-foreground max-w-2xl mx-auto leading-relaxed">
+            <div className="w-24 h-1 bg-secondary mx-auto mb-6"></div>
+            <p className="text-xl text-muted-foreground max-w-3xl mx-auto text-constrained leading-relaxed">
               Step into our elegantly designed dining spaces where every detail reflects
               the royal heritage of Ayodhya
             </p>
           </motion.div>
 
           {/* Gallery Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
             {images.map((image, index) => (
               <motion.div
                 key={index}
@@ -62,24 +63,24 @@ export default function Gallery() {
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: index * 0.1 }}
                 viewport={{ once: true }}
-                className="group relative overflow-hidden rounded-2xl card-elegant cursor-pointer shadow-lg hover:shadow-xl transition-shadow"
+                className="group relative overflow-hidden rounded-2xl card-elegant cursor-pointer hover-lift border border-border/20 bg-card/30 backdrop-blur-sm"
                 onClick={() => setSelectedImage(image.src)}
               >
                 <img
                   src={image.src}
                   alt={image.alt}
-                  className="w-full h-64 lg:h-80 object-cover transition-transform duration-500 group-hover:scale-110"
+                  className="w-full h-72 lg:h-96 object-cover transition-transform duration-500 group-hover:scale-110"
                   loading="lazy"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                <div className="absolute inset-0 bg-gradient-to-t from-primary/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                 <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                  <div className="bg-white/90 rounded-full p-3">
-                    <ZoomIn className="h-6 w-6 text-primary" />
+                  <div className="bg-card/95 rounded-full p-4 shadow-xl border border-secondary/20">
+                    <ZoomIn className="h-8 w-8 text-secondary" />
                   </div>
                 </div>
-                <div className="absolute bottom-0 left-0 right-0 p-6 text-white transform translate-y-full group-hover:translate-y-0 transition-transform duration-300">
-                  <h3 className="text-xl font-serif font-semibold mb-2">{image.title}</h3>
-                  <p className="text-sm opacity-90">{image.alt}</p>
+                <div className="absolute bottom-0 left-0 right-0 p-8 text-white transform translate-y-full group-hover:translate-y-0 transition-transform duration-300">
+                  <h3 className="text-2xl font-serif font-bold mb-2 text-secondary">{image.title}</h3>
+                  <p className="text-base opacity-90 leading-relaxed">{image.alt}</p>
                 </div>
               </motion.div>
             ))}
@@ -101,7 +102,7 @@ export default function Gallery() {
                 transition={{ duration: 0.3 }}
               >
                 <button
-                  className="absolute -top-12 right-0 text-white hover:text-gray-300 transition-colors"
+                  className="absolute -top-12 right-0 text-secondary hover:text-primary transition-colors bg-card/10 rounded-full p-2 backdrop-blur-sm"
                   onClick={() => setSelectedImage(null)}
                   aria-label="Close gallery"
                 >
