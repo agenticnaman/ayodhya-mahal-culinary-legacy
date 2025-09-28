@@ -35,7 +35,7 @@ export default function Header() {
               <div className="absolute inset-0 rounded-full ring-2 ring-secondary/20"></div>
             </div>
             <div className="text-2xl lg:text-3xl font-serif font-bold tracking-wide text-primary">
-              The Ayodhya Mahal
+              Where Tradition Meets Taste
             </div>
           </motion.div>
 
