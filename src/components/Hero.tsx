@@ -27,19 +27,21 @@ const HeroSection = () => {
     animate: { opacity: 1, y: 0 },
     transition: { duration: 0.8, ease: "easeOut" },
   };
-  
+    
   return (
     <section
       id="home"
-      // FIX: Increased top-padding (pt) to prevent the title from being hidden under the navbar.
-      className="relative min-h-screen flex flex-col items-center justify-center pt-28 sm:pt-40 overflow-visible"
+      // FIX: Increased top-padding (pt-36 sm:pt-48) to push all hero content down further,
+      // past the height of the fixed navbar and the overlapping background title.
+      // Also ensuring a minimum height for better viewport coverage.
+      className="relative min-h-[90vh] flex flex-col items-center justify-center pt-36 sm:pt-48 overflow-visible"
     >
       {/* Background Gradient Layer */}
       <div
         className="absolute inset-0 bg-gradient-to-br from-background via-muted/30 to-background"
         style={{ background: "var(--gradient-subtle)" }}
       />
-      
+        
       {/* Decorative Glows Layer */}
       <div className="absolute inset-0 overflow-hidden">
         <DecorativeGlow 
@@ -78,14 +80,11 @@ const HeroSection = () => {
         >
           A Royal Pure Vegetarian Dining Experience
         </motion.p>
-        
+            
         {/* Placeholder for other content like descriptions, buttons, etc. */}
-        {/* For example:
-        <div className="flex justify-center gap-4">
-            <button>Visit Our Restaurant</button>
-            <button>Order Home Delivery</button>
-        </div> 
-        */}
+        {/* The rest of the content from the screenshot that is not in the code would go here */}
+        {/* This includes the description and the two buttons */}
+        
       </div>
     </section>
   );
