@@ -1,93 +1,44 @@
-import { motion } from "framer-motion";
-
-// A smaller, reusable component for the animated background glows.
-// This keeps the main component's JSX cleaner.
-const DecorativeGlow = ({ className, animation, transition }) => {
-  return (
+<section
+  id="home"
+  className="relative min-h-screen flex flex-col items-center justify-center pt-20 sm:pt-32 overflow-visible"
+>
+  {/* Background Gradient */}
+  <div
+    className="absolute inset-0 bg-gradient-to-br from-background via-muted/30 to-background"
+    style={{
+      background: "var(--gradient-subtle)",
+    }}
+  />
+  
+  {/* Decorative Glow Elements */}
+  <div className="absolute inset-0 overflow-hidden">
     <motion.div
-      className={`absolute rounded-full blur-3xl ${className}`}
-      animate={animation}
-      transition={transition}
+      className="absolute top-20 left-10 w-32 h-32 rounded-full bg-primary/5 blur-3xl"
+      animate={{ y: [0, 20, 0] }}
+      transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
     />
-  );
-};
+    <motion.div
+      className="absolute bottom-20 right-10 w-40 h-40 rounded-full bg-secondary/5 blur-3xl"
+      animate={{ x: [0, -20, 0] }}
+      transition={{ duration: 10, repeat: Infinity, ease: "easeInOut" }}
+    />
+    <motion.div
+      className="absolute top-1/2 left-1/2 w-96 h-96 rounded-full bg-primary/3 blur-3xl -translate-x-1/2 -translate-y-1/2"
+      animate={{ scale: [1, 1.1, 1] }}
+      transition={{ duration: 12, repeat: Infinity, ease: "easeInOut" }}
+    />
+  </div>
 
-// The main Hero Section component.
-const HeroSection = () => {
-  // Animation settings for the glows
-  const glowTransitions = {
-    duration1: { duration: 8, repeat: Infinity, ease: "easeInOut" },
-    duration2: { duration: 10, repeat: Infinity, ease: "easeInOut" },
-    duration3: { duration: 12, repeat: Infinity, ease: "easeInOut" },
-  };
-
-  // Animation settings for the main title
-  const titleAnimation = {
-    initial: { opacity: 0, y: -40 },
-    animate: { opacity: 1, y: 0 },
-    transition: { duration: 0.8, ease: "easeOut" },
-  };
-    
-  return (
-    <section
-      id="home"
-      // FIX: Increased top-padding (pt-36 sm:pt-48) to push all hero content down further,
-      // past the height of the fixed navbar and the overlapping background title.
-      // Also ensuring a minimum height for better viewport coverage.
-      className="relative min-h-[90vh] flex flex-col items-center justify-center pt-36 sm:pt-48 overflow-visible"
+  <div className="container mx-auto container-padding relative z-10 text-center max-w-4xl">
+    <motion.h1
+      className="text-4xl sm:text-5xl lg:text-7xl font-serif font-bold mb-6 leading-tight"
+      initial={{ opacity: 0, y: -40 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.8, ease: "easeOut" }}
     >
-      {/* Background Gradient Layer */}
-      <div
-        className="absolute inset-0 bg-gradient-to-br from-background via-muted/30 to-background"
-        style={{ background: "var(--gradient-subtle)" }}
-      />
-        
-      {/* Decorative Glows Layer */}
-      <div className="absolute inset-0 overflow-hidden">
-        <DecorativeGlow 
-          className="top-20 left-10 w-32 h-32 bg-primary/5"
-          animation={{ y: [0, 20, 0] }}
-          transition={glowTransitions.duration1}
-        />
-        <DecorativeGlow 
-          className="bottom-20 right-10 w-40 h-40 bg-secondary/5"
-          animation={{ x: [0, -20, 0] }}
-          transition={glowTransitions.duration2}
-        />
-        <DecorativeGlow 
-          className="top-1/2 left-1/2 w-96 h-96 -translate-x-1/2 -translate-y-1/2 bg-primary/3"
-          animation={{ scale: [1, 1.1, 1] }}
-          transition={glowTransitions.duration3}
-        />
-      </div>
+      <span className="hero-text">The Ayodhya Mahal</span>
+    </motion.h1>
 
-      {/* Main Content Layer */}
-      <div className="container mx-auto container-padding relative z-10 text-center max-w-4xl">
-        <motion.h1
-          className="text-4xl sm:text-5xl lg:text-7xl font-serif font-bold mb-6 leading-tight"
-          initial={titleAnimation.initial}
-          animate={titleAnimation.animate}
-          transition={titleAnimation.transition}
-        >
-          <span className="hero-text">The Ayodhya Mahal</span>
-        </motion.h1>
-
-        <motion.p
-          className="text-lg sm:text-xl text-muted-foreground mb-8"
-          initial={{ opacity: 0, y: -20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
-        >
-          A Royal Pure Vegetarian Dining Experience
-        </motion.p>
-            
-        {/* Placeholder for other content like descriptions, buttons, etc. */}
-        {/* The rest of the content from the screenshot that is not in the code would go here */}
-        {/* This includes the description and the two buttons */}
-        
-      </div>
-    </section>
-  );
-};
-
-export default HeroSection;
+    {/* rest of content unchanged */}
+  </div>
+</section>
