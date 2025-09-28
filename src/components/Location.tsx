@@ -81,15 +81,37 @@ export default function Location() {
                       Contact Us
                     </h3>
                     <p className="text-muted-foreground mb-3">
+                      <span className="font-semibold text-foreground">+91 92145 05594</span><br />
                       Call us for reservations or home delivery
                     </p>
                     <div className="space-y-2">
-                      <Button variant="gold" size="sm">
-                        Call for Reservations
-                      </Button>
-                      <Button variant="outline" size="sm" className="ml-2">
-                        Order Home Delivery
-                      </Button>
+                      <a href="tel:+919214505594">
+                        <Button variant="gold" size="sm" className="w-full">
+                          📞 Call for Reservations
+                        </Button>
+                      </a>
+                      <div className="flex space-x-2">
+                        <a 
+                          href="https://www.swiggy.com/city/faizabad/the-ayodhya-mahal-subhash-nagar-rest1130341?utm_source=GooglePlaceOrder&utm_campaign=GoogleMap&is_retargeting=true&media_source=GooglePlaceOrder" 
+                          target="_blank" 
+                          rel="noopener noreferrer"
+                          className="flex-1"
+                        >
+                          <Button variant="outline" size="sm" className="w-full">
+                            🟠 Swiggy
+                          </Button>
+                        </a>
+                        <a 
+                          href="https://www.zomato.com/faizabad-ayodhya/the-ayodhya-mahal-faizabad-ayodhya-locality/order" 
+                          target="_blank" 
+                          rel="noopener noreferrer"
+                          className="flex-1"
+                        >
+                          <Button variant="outline" size="sm" className="w-full">
+                            🍽️ Zomato
+                          </Button>
+                        </a>
+                      </div>
                     </div>
                   </div>
                 </div>

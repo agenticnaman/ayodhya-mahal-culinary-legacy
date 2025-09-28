@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Menu, X, Phone, MapPin } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import logo from "@/assets/logo.jpg";
 
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -18,7 +19,8 @@ export default function Header() {
       <div className="container mx-auto container-padding">
         <div className="flex items-center justify-between h-16 lg:h-20">
           {/* Logo */}
-          <div className="flex items-center space-x-2">
+          <div className="flex items-center space-x-3">
+            <img src={logo} alt="The Ayodhya Mahal Logo" className="h-10 w-10 rounded-full object-cover" />
             <div className="text-2xl lg:text-3xl font-serif font-bold hero-text">
               The Ayodhya Mahal
             </div>
@@ -62,7 +64,7 @@ export default function Header() {
           <div className="hidden lg:flex items-center space-x-4">
             <div className="flex items-center space-x-2 text-sm text-muted-foreground">
               <Phone className="h-4 w-4" />
-              <span>Call for Reservations</span>
+              <span>+91 92145 05594</span>
             </div>
             <Button variant="royal" onClick={() => scrollToSection("location")}>
               Visit Us

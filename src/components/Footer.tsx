@@ -1,4 +1,4 @@
-import { MapPin, Clock, Phone, Utensils, Star, Home } from "lucide-react";
+import { MapPin, Clock, Phone, Utensils, Star, Home, Instagram } from "lucide-react";
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
@@ -109,7 +109,42 @@ export default function Footer() {
                 <div className="flex items-center space-x-3">
                   <Phone className="h-4 w-4 text-primary flex-shrink-0" />
                   <div className="text-sm text-muted-foreground">
+                    <p className="font-medium text-foreground">+91 92145 05594</p>
                     <p>Call for Reservations & Delivery</p>
+                  </div>
+                </div>
+                <div className="space-y-3 mt-4">
+                  <div className="text-sm">
+                    <p className="font-semibold text-card-foreground mb-2">Order Online:</p>
+                    <div className="flex flex-col space-y-2">
+                      <a 
+                        href="https://www.swiggy.com/city/faizabad/the-ayodhya-mahal-subhash-nagar-rest1130341?utm_source=GooglePlaceOrder&utm_campaign=GoogleMap&is_retargeting=true&media_source=GooglePlaceOrder" 
+                        target="_blank" 
+                        rel="noopener noreferrer"
+                        className="text-primary hover:text-secondary transition-colors"
+                      >
+                        🟠 Order on Swiggy
+                      </a>
+                      <a 
+                        href="https://www.zomato.com/faizabad-ayodhya/the-ayodhya-mahal-faizabad-ayodhya-locality/order" 
+                        target="_blank" 
+                        rel="noopener noreferrer"
+                        className="text-primary hover:text-secondary transition-colors"
+                      >
+                        🍽️ Order on Zomato
+                      </a>
+                    </div>
+                  </div>
+                  <div className="flex items-center space-x-3 pt-2">
+                    <Instagram className="h-4 w-4 text-primary" />
+                    <a 
+                      href="https://www.instagram.com/theayodhyamahal?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" 
+                      target="_blank" 
+                      rel="noopener noreferrer"
+                      className="text-sm text-primary hover:text-secondary transition-colors"
+                    >
+                      Follow us on Instagram
+                    </a>
                   </div>
                 </div>
               </div>
