@@ -2,19 +2,48 @@ import { Clock, MapPin, Utensils, Heart } from "lucide-react";
 import { motion } from "framer-motion";
 
 export default function About() {
-  return (
-    <section id="about" className="section-spacing bg-muted/30 relative z-10">
-      <div className="absolute inset-0 bg-gradient-to-br from-background via-muted/20 to-background pointer-events-none" />
+  const features = [
+    {
+      icon: Clock,
+      title: "Operating Hours",
+      description: "Open Monday to Sunday\n11:00 AM - 11:00 PM\nAlways ready to serve you",
+      bgClass: "bg-primary/10",
+      textClass: "text-primary"
+    },
+    {
+      icon: Utensils,
+      title: "Pure Vegetarian",
+      description: "100% Pure Vegetarian Thali\nJain-friendly options available\nNo alcohol served",
+      bgClass: "bg-secondary/10",
+      textClass: "text-secondary"
+    },
+    {
+      icon: MapPin,
+      title: "Prime Location",
+      description: "Awadhpuri Colony, Ayodhya\nConvenient for locals & tourists\nEasy to find & visit",
+      bgClass: "bg-accent/10",
+      textClass: "text-accent"
+    },
+    {
+      icon: Heart,
+      title: "Our Promise",
+      description: "Quality ingredients\nAuthentic flavors\nMemorable experiences",
+      bgClass: "bg-destructive/10",
+      textClass: "text-destructive"
+    }
+  ];
 
-      <div className="container mx-auto container-padding relative z-10">
+  return (
+    <section id="about" className="section-spacing bg-muted/30">
+      <div className="container mx-auto container-padding">
         <div className="max-w-6xl mx-auto">
           {/* Section Header */}
-          <motion.div 
+          <motion.div
             className="text-center mb-16"
-            initial={{ opacity: 0, y: 30 }}
+            initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
             viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
           >
             <h2 className="text-3xl lg:text-5xl font-serif font-bold mb-6 hero-text">
               About The Ayodhya Mahal
@@ -27,12 +56,12 @@ export default function About() {
           {/* Main Content */}
           <div className="grid lg:grid-cols-2 gap-12 items-center mb-16">
             {/* Text Content */}
-            <motion.div 
+            <motion.div
               className="space-y-6"
-              initial={{ opacity: 0, x: -30 }}
+              initial={{ opacity: 0, x: -20 }}
               whileInView={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.6 }}
               viewport={{ once: true }}
+              transition={{ duration: 0.6 }}
             >
               <div className="space-y-4">
                 <h3 className="text-2xl font-serif font-semibold text-primary">
@@ -45,7 +74,8 @@ export default function About() {
                 <p className="text-muted-foreground leading-relaxed">
                   The restaurant's interior is elegantly designed to provide a cozy yet refined ambiance, 
                   with warm lighting and tasteful decor that make every meal feel special. Whether you're 
-                  here for a quick bite or a leisurely gathering, the inviting atmosphere ensures a memorable dining experience.
+                  here for a quick bite or a leisurely gathering, the inviting atmosphere at The Ayodhya 
+                  Mahal ensures a memorable dining experience.
                 </p>
               </div>
 
@@ -55,55 +85,54 @@ export default function About() {
                 </h3>
                 <p className="text-muted-foreground leading-relaxed">
                   Each dish is thoughtfully crafted with quality ingredients and authentic flavors that 
-                  bring out the best in every cuisine we serve. Our commitment to quality and exceptional service makes us a must-visit destination.
+                  bring out the best in every cuisine we serve. Our commitment to quality ingredients, 
+                  and exceptional service makes us a must-visit destination.
                 </p>
               </div>
             </motion.div>
 
             {/* Features Grid */}
-            <motion.div 
+            <motion.div
               className="grid grid-cols-1 sm:grid-cols-2 gap-6"
-              initial={{ opacity: 0, x: 30 }}
+              initial={{ opacity: 0, x: 20 }}
               whileInView={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.6 }}
               viewport={{ once: true }}
+              transition={{ duration: 0.6 }}
             >
-              {[
-                { icon: Clock, title: "Operating Hours", details: "Mon - Sun: 11:00 AM - 11:00 PM", highlight: "Always ready to serve you", color: "primary" },
-                { icon: Utensils, title: "Pure Vegetarian", details: "100% Vegetarian Thali, Jain Options", highlight: "No alcohol served", color: "secondary" },
-                { icon: MapPin, title: "Prime Location", details: "Awadhpuri Colony, Ayodhya", highlight: "Easy to find & visit", color: "accent" },
-                { icon: Heart, title: "Our Promise", details: "Quality ingredients, Authentic flavors", highlight: "Memorable experiences", color: "destructive" },
-              ].map((feature, idx) => (
-                <div key={idx} className="card-elegant bg-card p-6 rounded-lg hover:shadow-lg transition-shadow">
-                  <div className="flex items-center space-x-3 mb-4">
-                    <div className={`p-2 bg-${feature.color}/10 rounded-lg`}>
-                      <feature.icon className={`h-6 w-6 text-${feature.color}`} />
+              {features.map((feature, idx) => {
+                const Icon = feature.icon;
+                return (
+                  <div key={idx} className="card-elegant bg-card p-6 rounded-lg">
+                    <div className="flex items-center space-x-3 mb-4">
+                      <div className={`${feature.bgClass} p-2 rounded-lg`}>
+                        <Icon className={`h-6 w-6 ${feature.textClass}`} />
+                      </div>
+                      <h4 className="font-semibold text-card-foreground">{feature.title}</h4>
                     </div>
-                    <h4 className="font-semibold text-card-foreground">{feature.title}</h4>
+                    <p className="text-sm text-muted-foreground whitespace-pre-line">
+                      {feature.description}
+                    </p>
                   </div>
-                  <p className="text-sm text-muted-foreground">
-                    {feature.details}<br />
-                    <span className={`text-${feature.color} font-medium`}>{feature.highlight}</span>
-                  </p>
-                </div>
-              ))}
+                );
+              })}
             </motion.div>
           </div>
 
           {/* Bottom Description */}
           <motion.div
-            className="bg-card card-elegant p-8 rounded-lg hover:shadow-lg transition-shadow"
+            className="bg-card card-elegant p-8 rounded-lg"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
             viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
           >
             <h3 className="text-2xl font-serif font-semibold text-primary mb-4">Summary</h3>
             <p className="text-muted-foreground leading-relaxed">
               For those who appreciate quality food, a warm atmosphere, and attentive service, 
               The Ayodhya Mahal in Awadhpuri Colony, Ayodhya is a must-visit destination. 
               With its extensive menu, accessible location, and dedication to customer satisfaction, 
-              The Ayodhya Mahal promises an unforgettable dining experience.
+              The Ayodhya Mahal promises an unforgettable dining experience. Whether you're a local 
+              or a visitor, join us to discover why we're the preferred choice for discerning diners.
             </p>
           </motion.div>
         </div>
